@@ -69,9 +69,7 @@ app.listen(process.env.PORT || 3000, function(req, res) {//process.env.PORT is d
   console.log("Listening to port 3000");
 });
 
-//List Id
-//71a6e854efff29fc02a1fe2b2feb54ad-us21
-//27064a2aac2102448084c2ff847eb903-us21
+ 
 //Audience ID or list Id
 //05dc5fcc30
 
