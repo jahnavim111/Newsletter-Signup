@@ -70,10 +70,4 @@ app.listen(process.env.PORT || 3000, function(req, res) {//process.env.PORT is d
 });
 
  
-//Audience ID or list Id
-//05dc5fcc30
-
-//mailchimp api endpoint
-//'https://<dc>.api.mailchimp.com/3.0/'
-
-//the mailchimp do not add already subscribed emails
+ 
