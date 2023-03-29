@@ -2,6 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
 const https = require('https');
+require('dotenv').config();//reads the env file and save all the variables
+ 
+ 
+ 
  
 const app = express();
 
@@ -32,11 +36,12 @@ app.post("/", function(req, res) {
     }]
   }
 
+   
   const jsonData = JSON.stringify(data);
   const url = "https://us21.api.mailchimp.com/3.0/lists/05dc5fcc30"
   const options = {
     method: "POST",
-    auth: "jahnavi1:3e4154fde7bb5fdefa8594a795e2afa8-us21"
+    auth: "jahnavi1:"+process.env.SECRET_API_KEY
   }
 
   const request = https.request(url, options, function(response) {
@@ -60,13 +65,13 @@ app.post("/failure",function(req,res){
 
 })
 
-app.listen(process.env.PORT || 3000, function(req, res) {//process.env.PORT is dyanmic port that heroku will define on the go.
+app.listen(process.env.PORT || 3000, function(req, res) {//process.env.PORT is dyanmic port that host like heroku will define on the go.
   console.log("Listening to port 3000");
 });
 
 //List Id
-//3e4154fde7bb5fdefa8594a795e2afa8-us21
-
+//71a6e854efff29fc02a1fe2b2feb54ad-us21
+//27064a2aac2102448084c2ff847eb903-us21
 //Audience ID or list Id
 //05dc5fcc30
 
